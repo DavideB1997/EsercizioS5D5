@@ -1,0 +1,60 @@
+﻿@model Verbale
+
+
+<form asp-controller="Verbale" asp-action="Add" method="post" class="mt-4">
+    <div class="form-group">
+        <label asp-for="@Model.DataViolazione" class="col-form-label">Data Violazione:</label>
+        <input type="date" asp-for="@Model.DataViolazione" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.IndirizzoViolazione" class="col-form-label">Indirizzo Violazione:</label>
+        <input type="text" asp-for="@Model.IndirizzoViolazione" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.NominativoAgente" class="col-form-label">Nominativo Agente:</label>
+        <input type="text" asp-for="@Model.NominativoAgente" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.DataTrascrizioneVerbale" class="col-form-label">Data Trascrizione Verbale:</label>
+        <input type="date" asp-for="@Model.DataTrascrizioneVerbale" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Importo" class="col-form-label">Importo:</label>
+        <input type="number" asp-for="@Model.Importo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.DecurtamentoPunti" class="col-form-label">Decurtamento Punti:</label>
+        <input type="text" asp-for="@Model.DecurtamentoPunti" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.IDViolazione" class="col-form-label">Violazione:</label>
+        <select name="IDViolazione" class="form-control">
+            @{
+                foreach (var violazione in ViewBag.ViolazioniLista)
+                {
+                    <option value="@violazione.IDViolazione">@violazione.Descrizione</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.IDAnagrafica" class="col-form-label">Anagrafica:</label>
+        <select name="IDAnagrafica" class="form-control">
+            @{
+                foreach (var trasgressore in ViewBag.AnagraficaLista)
+                {
+                    <option value="@trasgressore.IDAnagrafica">@trasgressore.Cognome @trasgressore.Nome</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

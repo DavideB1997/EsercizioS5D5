@@ -1,0 +1,47 @@
+﻿<h2>Verbali</h2>
+
+@if (Model.Count == 0)
+{
+    <h3>Non ci sono verbali nel database</h3>
+} else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">IdVerbale</th>
+                <th scope="col">DataViolazione</th>
+                <th scope="col">IndirizzoViolazione</th>
+                <th scope="col">Nominativo Agente</th>
+                <th scope="col">Data Trascrizione Verbale</th>
+                <th scope="col">Decurtamento Punti</th>
+                <th scope="col">IDAnagrafica</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">IDViolazione</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Importo</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var verbaleCompleto in Model)
+            {
+                <tr>
+                    <td>@verbaleCompleto.IDVerbale</td>
+                    <td>@verbaleCompleto.DataViolazione</td>
+                    <td>@verbaleCompleto.IndirizzoViolazione</td>
+                    <td>@verbaleCompleto.NominativoAgente</td>
+                    <td>@verbaleCompleto.DataTrascrizioneVerbale</td>
+                    <td>@verbaleCompleto.DecurtamentoPunti</td>
+                    <td>@verbaleCompleto.IDAnagrafica</td>
+                    <td>@verbaleCompleto.Nome</td>
+                    <td>@verbaleCompleto.Cognome</td>
+                    <td>@verbaleCompleto.IDViolazione</td>
+                    <td>@verbaleCompleto.Descrizione</td>
+                    <td>@verbaleCompleto.Importo</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    }

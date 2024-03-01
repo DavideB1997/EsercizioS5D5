@@ -1,0 +1,29 @@
+﻿<h2>Verbali</h2>
+
+@if (Model.Count == 0)
+{
+    <h3>Non ci sono verbali nel database</h3>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome Completo</th>
+                <th scope="col">Totale punti decurtati</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var verbaleParziale in Model)
+            {
+                <tr>
+                    <td>@verbaleParziale.NomeCompleto</td>
+                    <td>@verbaleParziale.TotalePuntiDecurtati</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
